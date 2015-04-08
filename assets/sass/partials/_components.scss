@@ -1,0 +1,28 @@
+// Cool stuff
+
+
+// Functions
+$browser-context: 16; // Base font size
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em
+}
+
+@mixin omega-reset($nth) {
+  &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
+  &:nth-child(#{$nth}+1) { clear: none }
+}
+
+// Flexslider
+.flexslider { margin: 0; padding: 0; }
+.flexslider .slides > li { display: none; -webkit-backface-visibility: hidden; }
+.flexslider .slides img { width: 100%; display: block; }
+.flex-pauseplay span { text-transform: capitalize; }
+ol.flex-control-nav{ padding: 0; margin: 0; list-style: none; }
+ol.flex-control-nav li{ display: inline; }
+ol.flex-control-nav li a{ display: inline-block; width: 18px; height: 18px; background: #3498db; text-indent: -9999999px; margin: 3px; -webkit-border-radius: 9px; -moz-border-radius: 9px; border-radius: 9px; }
+ol.flex-control-nav li a.flex-active{ background: #083665; }
+.slides:after { content: "\0020"; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
+html[xmlns] .slides { display: block; }
+* html .slides { height: 1%; }
+.no-js .slides > li:first-child { display: block; }

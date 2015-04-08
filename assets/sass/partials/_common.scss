@@ -1,0 +1,25 @@
+// Common elements such as headings and forms
+body{
+	font-family: Lato;
+}
+.wrap{
+  @include outer-container(1200px);
+}
+
+nav{
+  ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    li{
+      display: inline;
+    }
+  }
+}
+
+@include media($tablet) {
+
+}
+@include media($mobile) {
+
+}

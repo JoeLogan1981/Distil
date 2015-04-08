@@ -1,0 +1,47 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets/css/main.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+        <script src="https://cdn.firebase.com/js/client/2.2.2/firebase.js"></script>
+        <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.min.js"></script>
+        <script src="assets/js/app.js"></script>
+        <script src="assets/js/controllers/home.js"></script>
+        <script src="assets/js/controllers/nav.js"></script>
+        <script src="assets/js/controllers/register.js"></script>
+        <script src="assets/js/controllers/login.js"></script>
+        <script src="assets/js/controllers/profile.js"></script>
+        <script src="assets/js/controllers/chat.js"></script>
+        <script src="assets/js/models/model.js"></script>
+    </head>
+
+    <body ng-app="myApp">
+
+    <header id="banner" ng-controller="navCtrl">
+        <a href="#/" class="logo">Logo</a>
+        <nav id="main">
+            <ul>
+                <li ng-hide="isLoggedIn" class="register"><a href="#/register">Register</a></li>
+                <li ng-hide="isLoggedIn" class="login"><a href="#/login">Login</a></li>
+                <li ng-show="isLoggedIn" class="profile"><a href="#/profile/{{isLoggedIn.uid}}">Profile</a></li>
+                <li ng-show="isLoggedIn" class="chat"><a href="#/chat">Chat</a></li>
+                <li ng-show="isLoggedIn" class="logout" ng-click="logout()">Logout</li>
+            </ul>
+        </nav>
+    </header>
+
+    <p ng-show=""></p>
+
+    <div ng-view></div>
+
+  
+
+
+    </body>
+</html>

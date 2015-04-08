@@ -1,0 +1,24 @@
+#banner{
+	@include clearfix();
+	background-color: #EEE;
+	padding: 20px;
+	.logo{
+		@include span-columns(4);
+	}
+	nav{
+		@include span-columns(8);
+		@include omega();
+		float: right;
+		height: 40px;
+		text-align: right;
+		
+	}
+}
+
+
+@include media($tablet) {
+
+}
+@include media($mobile) {
+
+}
