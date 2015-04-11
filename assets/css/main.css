@@ -3177,4 +3177,25 @@ nav ul {
   nav ul li {
     display: inline; }
 
+.content .chat-messages {
+  padding: 10px; }
+.content .chat-message {
+  background-color: #EEE;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 5px; }
+  .content .chat-message .user {
+    margin-bottom: 5px;
+    float: right;
+    font-style: italic; }
+  .content .chat-message .message {
+    font-weight: bold; }
+
+.post-bar {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background-color: #EEE;
+  padding: 10px; }
+
 /*# sourceMappingURL=main.css.map */

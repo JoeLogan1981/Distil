@@ -1,5 +1,10 @@
-<button ng-click="post(message)">Post</button>
-<ul>
-<li ng-repeat="msg in chat">{{msg.text}} | {{msg.user}}</li>
+<ul class="chat-messages">
+<li class="chat-message" ng-repeat="msg in chat">
+<p class="user">{{msg.user}}</p>
+<p class="message">{{msg.text}}</p>
+</li>
 </ul>
+<div class="post-bar">
 <input type="text" placeholder="Message" ng-model="message.text" />
+<button ng-click="post(message)">Post</button>
+</div>

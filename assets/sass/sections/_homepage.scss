@@ -1,4 +1,32 @@
+.content {
+	.chat-messages {
+		padding: 10px;
+	}
+	.chat-message {
+		background-color: #EEE;
+		margin-bottom: 10px;
+		border-radius: 10px;
+		padding: 5px;
 
+		.user {
+			margin-bottom: 5px;
+			float: right;
+			font-style: italic;
+		}
+		.message {
+			font-weight: bold;
+		}
+
+	}
+}
+
+.post-bar {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	background-color: #EEE;
+	padding: 10px;
+}
 
 
 @include media($tablet) {
