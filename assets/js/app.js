@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ["firebase", "ngRoute"]);
+var myApp = angular.module('myApp', ["firebase", "ngRoute", "ngCsvImport"]);
 
 myApp.config(['$routeProvider',
   function($routeProvider) {
@@ -12,6 +12,16 @@ myApp.config(['$routeProvider',
       when('/register', {
         templateUrl: 'views/register.html',
         controller: 'registerCtrl'
+      }).
+
+      when('/admin', {
+        templateUrl: 'views/admin.html',
+        controller: 'adminCtrl'
+      }).
+
+      when('/seo/:seoID', {
+        templateUrl: 'views/seo-report.html',
+        controller: 'seoCtrl'
       }).
 
         when('/chat', {

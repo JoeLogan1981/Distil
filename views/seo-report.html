@@ -1,0 +1,21 @@
+<style>
+table th, table td{ padding: 8px; text-align: left; }
+</style>
+
+<br><br>
+<h3>SEO Ranking Data for {{report.name}}</h3>
+<br><br>
+Search: <input ng-model="searchText">
+<br><br>
+<table>
+    <tr>
+      <th>SKU</th>
+      <th>Image</th>
+      <th>Label</th>
+    </tr>
+    <tr ng-repeat="i in reportdata | filter:searchText">
+      <td>{{i.sku}}</td>
+      <td>{{i.image}}</td>
+      <td>{{i.label}}</td>
+    </tr>
+  </table>
