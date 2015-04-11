@@ -17,29 +17,43 @@ myApp.controller('adminCtrl', function($scope, myFactory) {
 
 
 });
-
+ 
 
 myApp.controller('seoCtrl', function($scope, $routeParams, myFactory) {
 
-  $scope.report = myFactory.getReport($routeParams.seoID);
+// Grab the data from the factory
 
-  $scope.$watch("report.content", function() {
-    var lines, lineNumber, data, length;
-    $scope.reportdata = [];
-    lines = $scope.report.content.split('\n');
-    for (var i = lines.length - 1; i >= 0; i--) {
-        l = lines[i];
-        data = l.split(',');
-        var sku = data[0];
-        var image = data[1];
-        var label = data[2];
-        $scope.reportdata.push({
-          sku: sku,
-          image: image,
-          label: label,
-        });
+var data = myFactory.getReport($routeParams.seoID);
+
+// When it has loaded asyncrously, execute the following
+
+data.$loaded().then(function() {
+
+  // Split the data from firebase into individual items with the newline delimiter
+
+  var array = data.content.split('\n');
+
+  // Initialise the reportdata array on the scope
+
+  $scope.reportdata = [];
+
+  // For loop counting along the length of the array, each time creating a new object
+  // and pushing it onto the reportdata array
+
+  for (var i = 0; i < array.length; i++) {
+    var keys = array[i].split(',');
+    var obj = {
+      sku: keys[0],
+      image: keys[1],
+      label: keys[2]
     }
-  });
+    $scope.reportdata.push(obj);
+  };
+  
+});
+
+
+
 
 
 });

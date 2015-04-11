@@ -10,6 +10,7 @@
 <br><br>
 <div class="list">
     <h3>SEO Reports</h3>
+    {{report}}
     <ul style="padding: 20px">
         <li ng-repeat="report in reportlist"><a href="#/seo/{{report.$id}}">{{report.name}}</a></li>
     </ul>
